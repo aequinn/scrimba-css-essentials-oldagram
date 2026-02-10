@@ -1,0 +1,108 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #EDEDED;
+}
+
+
+/*Typography*/
+*{
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.content-bold{
+    font-weight: 700;
+}
+
+/*Images*/
+img{
+    max-width: 100%;
+
+}
+.user-image {
+    width:35px;
+    border-radius:50%;
+    
+}
+/*Layout Containers*/
+.app-container {
+    width:375px;
+    margin: 0 auto;
+}
+.container{
+    padding: 15px 15px;
+}
+/*App header*/
+
+.app-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color:#fff;
+    height: 85px;
+    border-bottom: 2px solid #C6C6C6;
+}
+
+.app-logo{
+    height: 110%;
+}
+
+
+/*Post Styles*/
+.post-card{
+    background-color:#fff;
+    margin-bottom:20px;
+}
+.post-header p{
+    margin:-2px;
+}
+.poster-image{
+    float:left;
+    width:34px;
+    margin-right: 10px;
+}
+
+.poster-name{
+    font-size: .8125em;
+    margin:0;
+}
+.poster-location{
+    font-size:.75em;
+}
+
+/*post footer styles*/
+.post-controls{
+    list-style: none;
+    display:flex;
+    padding:0;
+    margin:0;
+    gap:8px;
+}
+.post-controls button{
+    display:flex;
+    flex-direction: column;
+    background:none;
+    align-items: center;
+    font-size: .65em;
+    padding:5px 13px;
+    border-radius: 4px;
+    gap:2px;
+    border:none;
+    cursor:pointer;
+    border:1px solid transparent;
+}
+
+.post-controls button:hover, 
+.post-controls button:focus{
+    background-color: #E3E3E3;
+    border:1px solid #788082;
+}
+
+.post-controls img{
+    width: 25px;
+}
+.post-footer p{
+    font-size: .8125em;
+    margin-block: 8px;
+}

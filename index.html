@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oldagram</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header container">
+            <img class="app-logo" src="images/logo.png" alt="Oldagram Logo">
+            <img class="user-image" src="images/user-avatar.png" alt="Your Profile Avatar">
+        </header>
+        <main>
+        </main>
+    </div>
+</body>
+<template id="post-template">
+    <section class="post-card">
+        <header class="post-header container">
+            <img class="user-image poster-image" alt="${post.name} profile avatar">
+            <h2 class="poster-name"></h2>
+            <p class="poster-location"></p>
+        </header>
+        <img class="post-image" alt="selfie">
+        <footer class="post-footer container">
+            <ul class="post-controls">
+                <li><button><img src="images/icon-heart.png" alt="like"></button></li>
+                <li><button><img src="images/icon-comment.png" alt="comment"></button></li>
+                <li><button><img src="images/icon-dm.png" alt="message"></button></li>
+            </ul>
+            <p class="content-bold"></p>
+            <p><span class="content-bold"></span> </p>
+        </footer>
+    </section>
+</template>
+<script src="index.js"></script>
+</html>
