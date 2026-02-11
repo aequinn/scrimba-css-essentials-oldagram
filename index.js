@@ -71,18 +71,18 @@ function updateCounter(el) {
     .closest("footer")
     .querySelectorAll(".content-bold span")[0];
   const likeButton = el.target.closest("button");
-  const likeClick = el.target;
+  console.log(el.target);
 
   if (likeButton.classList.contains("like")) {
     targetLikesEl.textContent = parseInt(targetLikesEl.textContent) + 1;
     likeButton.classList.remove("like");
     likeButton.classList.add("liked");
-    likeClick.src = "images/icon-heart-filled.png";
+    likeButton.querySelectorAll("img")[0].src = "images/icon-heart-filled.png";
   } else {
     targetLikesEl.textContent = parseInt(targetLikesEl.textContent) - 1;
     likeButton.classList.remove("liked");
     likeButton.classList.add("like");
-    likeClick.src = "images/icon-heart-outline.png";
+    likeButton.querySelectorAll("img")[0].src = "images/icon-heart-outline.png";
   }
 }
 
