@@ -29,6 +29,7 @@ const posts = [
   },
 ];
 
+/*function to render posts from json object*/
 function renderPosts() {
   const postContainer = document.querySelectorAll("main")[0];
   if (postContainer) {
@@ -43,19 +44,47 @@ function renderPosts() {
                 <img class="post-image" src=${post.post} alt="selfie">
                 <footer class="post-footer container">
                     <ul class="post-controls">
-                        <li><button><img src="images/icon-heart.png" alt="like"></button></li>
+                        <li><button class="like"><img src="images/icon-heart-outline.png" alt="like"></button></li>
                         <li><button><img src="images/icon-comment.png" alt="comment"></button></li>
                         <li><button><img src="images/icon-dm.png" alt="message"></button></li>
                     </ul>
-                    <p class="content-bold">${post.likes} likes</p>
+                    <p class="content-bold"><span>${post.likes}</span> likes</p>
                     <p><span class="content-bold">${post.username}</span> ${post.comment}</p>
                 </footer>
             </section>
         `;
-        const newPost = document.getElementById("post-template");
-        postContainer.appendChild(newPost);
+
+      // const newPost = document.getElementById("post-template");
+      // postContainer.appendChild(newPost);
+    });
+    const likeButtons = document.querySelectorAll(".like");
+    likeButtons.forEach((button) => {
+      button.addEventListener("click", updateCounter);
     });
   }
 }
 
+/*like logic*/
+
+function updateCounter(el) {
+  const targetLikesEl = el.target
+    .closest("footer")
+    .querySelectorAll(".content-bold span")[0];
+  const likeButton = el.target.closest("button");
+  const likeClick = el.target;
+
+  if (likeButton.classList.contains("like")) {
+    targetLikesEl.textContent = parseInt(targetLikesEl.textContent) + 1;
+    likeButton.classList.remove("like");
+    likeButton.classList.add("liked");
+    likeClick.src = "images/icon-heart-filled.png";
+  } else {
+    targetLikesEl.textContent = parseInt(targetLikesEl.textContent) - 1;
+    likeButton.classList.remove("liked");
+    likeButton.classList.add("like");
+    likeClick.src = "images/icon-heart-outline.png";
+  }
+}
+
+/*what is called when javascript file loads*/
 renderPosts();
