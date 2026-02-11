@@ -71,7 +71,6 @@ function updateCounter(el) {
     .closest("footer")
     .querySelectorAll(".content-bold span")[0];
   const likeButton = el.target.closest("button");
-  console.log(el.target);
 
   if (likeButton.classList.contains("like")) {
     targetLikesEl.textContent = parseInt(targetLikesEl.textContent) + 1;
